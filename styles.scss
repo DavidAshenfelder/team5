@@ -331,6 +331,7 @@ header {
   }
 
 
+
   #landingPageImageErrorBlock {
     display: none;
     position: absolute;
@@ -406,7 +407,7 @@ header {
 }
 
 
-#landingPageUsernameErrorBlock.activeUsernameError {
+#landingPageUsernameErrorBlock .activeUsernameError {
 display: block;
 }
 

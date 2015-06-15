@@ -129,6 +129,9 @@ var page = {
   });
 },
 
+///////////Loading only new messages in set interval at top of page///////
+
+
 addNewMessagesToDOM: function(newMessages) {
     _.each(newMessages, page.addOneMessageToDOM);
   },
@@ -151,6 +154,8 @@ addNewMessagesToDOM: function(newMessages) {
       }
     })
   },
+
+  ////////////////////////////////////////////////////////////////////////////
 
   createMessage: function (newMessage) {
 

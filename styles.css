@@ -292,7 +292,7 @@ header {
     #landingPageSubmitBlock > input:focus {
       outline: 0; }
 
-#landingPageUsernameErrorBlock.activeUsernameError {
+#landingPageUsernameErrorBlock .activeUsernameError {
   display: block; }
 
 /*********************
