@@ -8,7 +8,7 @@ $(document).ready(function(){
 var page = {
 
   url: "http://tiy-fee-rest.herokuapp.com/collections/blabber",
-  urllogin: "http://tiy-fee-rest.herokuapp.com/collections/blabberuserlogin",
+  // urllogin: "http://tiy-fee-rest.herokuapp.com/collections/blabberuserlogin",
 
   init: function () {
     page.initStyling();
@@ -220,77 +220,77 @@ addNewMessagesToDOM: function(newMessages) {
 
 
 ////////////Trying to create Login here//////////////
-  addLogin: function(event) {
-    event.preventDefault();
-    var newLogin = {
-      login: $('#landingFormUsername').val(),
-      password: $('#landingFormPassword').val(),
-    }
-    page.createLogin(newLogin);
-  },
-
-  createLogin: function(login) {
-    $.ajax({
-
-      url: page.urllogin,
-      method: 'POST',
-      data: login,
-      success: function(data) {
-        page.addOneLoginToDOM(data);
-      },
-      error: function(err) {
-      console.log("error", err);
-    }
-    });
-  },
-
-  deleteLogin: function(deleteId) {
-  $.ajax({
-    url: page.urllogin + "/" + deleteId,
-    method: 'DELETE',
-    success: function (data) {
-      // $('.status').html('');
-      page.loadLogin();
-    }
-  });
-},
-
-  deleteAllLogins: function(messageCollection) {
-    $.ajax({
-      url: page.urllogin,
-      method: 'DELETE',
-      success: function (data) {
-        // $('.status').html('');
-        page.loadLogin();
-      }
-    });
-  },
-
-
-  loadLogin: function () {
-    $.ajax({
-    url: page.urllogin,
-    method: 'GET',
-    success: function (data) {
-      page.addAllLoginsToDOM();
-      console.log("Logins Loaded");
-    },
-
-
-
-    error: function (err) {
-
-    }
-  });
-  },
-
-  addAllLoginsToDOM: function(loginCollection) {
-    _.each(loginCollection, page.addOneLoginToDOM);
-  },
-
-  addOneLoginToDOM: function(login) {
-    page.loadTemplate("userStatus", login, $('#asideMain'));
-  },
+//   addLogin: function(event) {
+//     event.preventDefault();
+//     var newLogin = {
+//       login: $('#landingFormUsername').val(),
+//       password: $('#landingFormPassword').val(),
+//     }
+//     page.createLogin(newLogin);
+//   },
+//
+//   createLogin: function(login) {
+//     $.ajax({
+//
+//       url: page.urllogin,
+//       method: 'POST',
+//       data: login,
+//       success: function(data) {
+//         page.addOneLoginToDOM(data);
+//       },
+//       error: function(err) {
+//       console.log("error", err);
+//     }
+//     });
+//   },
+//
+//   deleteLogin: function(deleteId) {
+//   $.ajax({
+//     url: page.urllogin + "/" + deleteId,
+//     method: 'DELETE',
+//     success: function (data) {
+//       // $('.status').html('');
+//       page.loadLogin();
+//     }
+//   });
+// },
+//
+//   deleteAllLogins: function(messageCollection) {
+//     $.ajax({
+//       url: page.urllogin,
+//       method: 'DELETE',
+//       success: function (data) {
+//         // $('.status').html('');
+//         page.loadLogin();
+//       }
+//     });
+//   },
+//
+//
+//   loadLogin: function () {
+//     $.ajax({
+//     url: page.urllogin,
+//     method: 'GET',
+//     success: function (data) {
+//       page.addAllLoginsToDOM();
+//       console.log("Logins Loaded");
+//     },
+//
+//
+//
+//     error: function (err) {
+//
+//     }
+//   });
+//   },
+//
+//   addAllLoginsToDOM: function(loginCollection) {
+//     _.each(loginCollection, page.addOneLoginToDOM);
+//   },
+//
+//   addOneLoginToDOM: function(login) {
+//     page.loadTemplate("userStatus", login, $('#asideMain'));
+//   },
   ////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////
 
